@@ -1,4 +1,4 @@
-"""Hamming code is used to verify wheather the sent data is equal to the received data using redundant bits"""
+"""Hamming code is used to verify wheather the sent data is equal to the received data using redundant bits in the network """
 """Using hamming code we are able to find error in only one bit"""
 
 """
@@ -6,7 +6,7 @@ output format:
 Enter No.of bits:4
 Enter No.of redundant bits:3
 #######
-Enter list to send
+Enter list of bit values
 Enter value:0
 Enter value:0
 Enter value:1
@@ -14,7 +14,14 @@ Enter value:1
 redundant bits here are:[1,0,0]
 obtained list is :[1,0,0,0,0,1,1]
 
-Enter bits"""
+Enter received bits
+Enter value:0
+Enter value:1->suppose this bit is received
+Enter value:1
+Enter value:1
+redundant bits here are:[0,0,1, 0, 0, 1]
+obtained list is :[0,0,0,1,1,1,1]
+Error is Found in Postition :5 of obtainedlist[0,0,0,1,1,1,1]"""
 m = input("Enter No.of bits:")
 r = input("Enter No.of redundant bits:")
 n = int(m + r)
@@ -98,8 +105,8 @@ send1 = fun1()
 send.clear()
 print("Enter received bits")
 recv1 = fun1()
-print(send1)
-print(recv1)
+#print(send1)
+#print(recv1)
 sum = 0
 for i in range(0, len(send1)):
     if (send1[i] != recv1[i]):
